@@ -20,3 +20,25 @@ fi
 echo "Updating homebrew..."
 brew update
 brew upgrade
+
+beginDeploy() {
+    echo
+    echo "${bold}$1${normal}"
+}
+
+### Applications
+CaskAppList=(
+    google-chrome
+)
+brew install --cask --appdir="/Applications" ${CaskAppList[@]}
+
+### IDEs
+CaskIDEsList=(
+    visual-studio-code
+    #visual-studio
+)
+brew install --cask --appdir="/Applications" ${CaskIDEsList[@]}
+# TODO: Install VS Code extensions listed in separate txt file
+#cat vscode-extensions.txt | xargs -L1 code --install-extension 
+
+
