@@ -38,7 +38,16 @@ CaskIDEsList=(
     #visual-studio
 )
 brew install --cask --appdir="/Applications" ${CaskIDEsList[@]}
-#Install VS Code extensions listed in separate txt file
+# Install VS Code extensions listed in separate txt file
 cat vscode-extensions | xargs -L1 code --install-extension 
 
-
+### DevOps Tools
+DevOpsToolList=(
+    terraform
+)
+CaskDevOpsToolList=(
+    virtualbox
+    docker
+)
+brew install ${DevOpsToolList[@]}
+brew install --cask ${CaskDevOpsToolList[@]}
