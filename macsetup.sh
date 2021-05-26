@@ -18,8 +18,8 @@ if test ! $(which brew); then
 fi
 
 echo "Updating homebrew..."
-#brew update
-#brew upgrade
+brew update
+brew upgrade
 
 beginDeploy() {
     echo
