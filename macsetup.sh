@@ -18,8 +18,8 @@ if test ! $(which brew); then
 fi
 
 echo "Updating homebrew..."
-brew update
-brew upgrade
+#brew update
+#brew upgrade
 
 beginDeploy() {
     echo
@@ -38,7 +38,7 @@ CaskIDEsList=(
     #visual-studio
 )
 brew install --cask --appdir="/Applications" ${CaskIDEsList[@]}
-# TODO: Install VS Code extensions listed in separate txt file
-#cat vscode-extensions.txt | xargs -L1 code --install-extension 
+#Install VS Code extensions listed in separate txt file
+cat vscode-extensions | xargs -L1 code --install-extension 
 
 
