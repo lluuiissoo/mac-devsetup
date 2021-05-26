@@ -26,28 +26,22 @@ beginDeploy() {
     echo "${bold}$1${normal}"
 }
 
-### Applications
+### GUI
 CaskAppList=(
     google-chrome
-)
-brew install --cask --appdir="/Applications" ${CaskAppList[@]}
-
-### IDEs
-CaskIDEsList=(
     visual-studio-code
-    #visual-studio
-)
-brew install --cask --appdir="/Applications" ${CaskIDEsList[@]}
-# Install VS Code extensions listed in separate txt file
-cat vscode-extensions | xargs -L1 code --install-extension 
-
-### DevOps Tools
-DevOpsToolList=(
-    terraform
-)
-CaskDevOpsToolList=(
     virtualbox
     docker
 )
-brew install ${DevOpsToolList[@]}
-brew install --cask ${CaskDevOpsToolList[@]}
+brew install --cask --appdir="/Applications" ${CaskAppList[@]}
+
+### CLI Tools
+CLIToolList=(
+    go
+    terraform
+)
+brew install ${CLIToolList[@]}
+
+### Custom
+# Install VS Code extensions listed in separate txt file
+cat vscode-extensions | xargs -L1 code --install-extension 
