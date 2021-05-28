@@ -32,6 +32,7 @@ CaskAppList=(
     visual-studio-code
     virtualbox
     docker
+    1password
 )
 brew install --cask --appdir="/Applications" ${CaskAppList[@]}
 
