@@ -39,6 +39,7 @@ brew install --cask --appdir="/Applications" ${CaskAppList[@]}
 CLIToolList=(
     go
     terraform
+    azure-cli
 )
 brew install ${CLIToolList[@]}
 
