@@ -30,7 +30,6 @@ beginDeploy() {
 CaskAppList=(
     google-chrome
     visual-studio-code
-    virtualbox
     docker
     1password
 )
