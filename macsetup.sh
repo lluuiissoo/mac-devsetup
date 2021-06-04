@@ -18,13 +18,8 @@ if test ! $(which brew); then
 fi
 
 echo "Updating homebrew..."
-brew update
-brew upgrade
-
-beginDeploy() {
-    echo
-    echo "${bold}$1${normal}"
-}
+#brew update
+#brew upgrade
 
 ### GUI
 CaskAppList=(
