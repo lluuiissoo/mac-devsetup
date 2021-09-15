@@ -35,6 +35,7 @@ CLIToolList=(
     go
     terraform
     azure-cli
+    node
 )
 brew install ${CLIToolList[@]}
 
