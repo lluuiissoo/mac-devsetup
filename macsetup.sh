@@ -7,10 +7,10 @@ red=`tput setaf 1`
 green=`tput setaf 2`
 reset=`tput sgr0`
 
-# if test ! $(which gcc); then
-#   echo "Installing command line developer tools..."
-#   xcode-select --install
-# fi
+if test ! $(which gcc); then
+  echo "Installing command line developer tools..."
+  xcode-select --install
+fi
 
 if test ! $(which brew); then
   echo "Installing homebrew..."
@@ -18,19 +18,20 @@ if test ! $(which brew); then
 fi
 
 echo "Updating homebrew..."
-#brew update
-#brew upgrade
+brew update
+brew upgrade
 
-### GUI
+## GUI
 CaskAppList=(
-    google-chrome
-    visual-studio-code
-    docker
-    1password
+   google-chrome
+   visual-studio-code
+   docker
+   1password
+    powershell
 )
 brew install --cask --appdir="/Applications" ${CaskAppList[@]}
 
-### CLI Tools
+## CLI Tools
 CLIToolList=(
     go
     terraform
@@ -42,3 +43,10 @@ brew install ${CLIToolList[@]}
 ### Custom
 # Install VS Code extensions listed in separate txt file
 cat vscode-extensions | xargs -L1 code --install-extension 
+
+if test ! $(which omz); then
+  echo "Installing Oh My ZSH ..."
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+fi
+echo "Updating Oh My ZSH ..."
+omz update
