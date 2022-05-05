@@ -27,7 +27,7 @@ CaskAppList=(
    visual-studio-code
    docker
    1password
-    powershell
+   powershell
 )
 brew install --cask --appdir="/Applications" ${CaskAppList[@]}
 
@@ -37,6 +37,8 @@ CLIToolList=(
     terraform
     azure-cli
     node
+    hugo
+    dotnet
 )
 brew install ${CLIToolList[@]}
 
