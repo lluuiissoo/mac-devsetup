@@ -39,6 +39,7 @@ CLIToolList=(
     node
     hugo
     dotnet
+    gnupg
 )
 brew install ${CLIToolList[@]}
 
